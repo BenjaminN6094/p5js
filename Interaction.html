@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+    var g
+var b
+var r
+var scale 
+var angle
+function setup() {
+  background(255);
+  createCanvas(400, 400);
+  scale = 1
+	angle = 0
+g = 0
+b = 0
+r = 0
+}
+
+ function draw() {
+   fill(r,g,b)
+   stroke(1)
+ strokeWeight(3)
+   fill(r, mouseX, b)
+ ellipse(mouseX, mouseY, scale*75, scale *75)
+ ellipse(mouseX + 20, mouseY, scale*50, scale *50)
+ ellipse(mouseX - 20, mouseY, scale*50, scale *50)
+ ellipse(mouseX, mouseY + 20, scale*25, scale *100)
+ ellipse(mouseX, mouseY - 20, scale*25, scale *100)
+ ellipse(mouseX, mouseY - 20, scale*25, scale *100)
+ ellipse(mouseX + 20, mouseY - 20, scale*30, scale *30)
+ ellipse(mouseX - 20, mouseY + 20, scale*30, scale *30)
+   scale = abs(cos(angle))
+  angle += PI / 100
+ }
+function mousePressed() {
+clear()
+g = mouseX
+b = 0
+r = 0
+}
+
+function keyPressed() {
+clear()
+g = 0
+b = mouseX
+r = 0
+}
+
+function mouseDragged() {
+clear()
+r = mouseX
+g = 0
+b = 0
+  
+}
+
+
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/BenjaminN6094/p5js/blob/master/Interaction.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
